@@ -43,9 +43,8 @@ class FormatConverter
      * @param null $currency
      * @return null|string
      */
-    public static function formatToPrice($value, $currency = null)
+    public static function formatToPrice($value, $decimals = 2, $currency = null)
     {
-        $decimals = 2;
         $currencyDecimals = array('JPY' => 0, 'TWD' => 0, 'HUF' => 0);
         if ($currency && array_key_exists($currency, $currencyDecimals)) {
             if (strpos($value, ".") !== false && (floor($value) != $value)) {
