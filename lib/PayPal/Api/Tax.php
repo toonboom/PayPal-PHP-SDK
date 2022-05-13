@@ -73,10 +73,10 @@ class Tax extends PayPalModel
      * 
      * @return $this
      */
-    public function setPercent($percent)
+    public function setPercent($percent, $decimals = 2)
     {
         NumericValidator::validate($percent, "Percent");
-        $percent = FormatConverter::formatToPrice($percent);
+        $percent = FormatConverter::formatToPrice($percent, $decimals);
         $this->percent = $percent;
         return $this;
     }
