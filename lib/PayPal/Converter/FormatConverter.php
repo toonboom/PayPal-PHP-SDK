@@ -28,7 +28,7 @@ class FormatConverter
     public static function formatToNumber($value, $decimals = 2)
     {
         if (trim($value) != null) {
-            return number_format($value, $decimals, '.', '');
+            return number_format($value, intval($decimals), '.', '');
         }
         return null;
     }
