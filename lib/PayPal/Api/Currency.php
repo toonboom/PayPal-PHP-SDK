@@ -48,10 +48,10 @@ class Currency extends PayPalModel
      * 
      * @return $this
      */
-    public function setValue($value)
+    public function setValue($value, $decimals = 2)
     {
         NumericValidator::validate($value, "Value");
-        $value = FormatConverter::formatToPrice($value, $this->getCurrency());
+        $value = FormatConverter::formatToPrice($value, $decimals, $this->getCurrency());
         $this->value = $value;
         return $this;
     }
